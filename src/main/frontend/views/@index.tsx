@@ -4,8 +4,8 @@ import { Button, Notification, TextField } from '@vaadin/react-components';
 import { HelloWorldService } from 'Frontend/generated/endpoints.js';
 
 export const config: ViewConfig = {
-  menu: { order: 0, icon: 'line-awesome/svg/globe-solid.svg' },
-  title: 'Hello Hilla',
+  menu: { order: 0, icon: 'line-awesome/svg/home-solid.svg' },
+  title: 'Home',
 };
 
 export default function HelloHillaView() {
