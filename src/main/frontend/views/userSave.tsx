@@ -1,30 +1,31 @@
 import { ViewConfig } from '@vaadin/hilla-file-router/types.js';
-import { UserEndpoint } from 'Frontend/generated/endpoints';
 import { Button } from '@vaadin/react-components/Button';
-import User from 'Frontend/generated/com/example/application/users/User';
+
+import UserItem from 'Frontend/generated/com/example/application/users/UserItem';
+import { userEndpointApi } from 'Frontend/middleware/endpointsApi/userEndpointApi';
 
 export const config: ViewConfig = {
-    menu: { order: 3, icon: 'line-awesome/svg/users-cog-solid.svg' },
-    title: 'Users'
+  menu: { order: 3, icon: 'line-awesome/svg/users-cog-solid.svg' },
+  title: 'Users',
 };
 
-const sampleUser: User = {
-  userId: "USER#2024#001",
-  operation: "profile",
-  username: "jdoe",
-  email: "jdoe@example.com",
-  fullName: "John Doe",
-  phone: "+34 600 123 456"
+const sampleUser: UserItem = {
+  userId: 'USER#2024#001',
+  operation: 'profile',
+  username: 'jdoe',
+  email: 'jdoe@example.com',
+  fullName: 'John Doe',
+  phone: '+34 600 123 456',
 };
 
 export default function UsersView() {
   const handleSaveUser = async () => {
     try {
-      await UserEndpoint.saveUser(sampleUser);
+      await userEndpointApi.saveUser(sampleUser);
       alert('User saved successfully!');
     } catch (error) {
-      console.error('Error saving user:', error);
-      alert('Failed to save user');
+      console.error('Error saving userItem:', error);
+      alert('Failed to save userItem');
     }
   };
 
@@ -34,15 +35,11 @@ export default function UsersView() {
       <h2>User Management</h2>
 
       <div className="card p-m">
-        <pre className="text-left">
-          {JSON.stringify(sampleUser, null, 2)}
-        </pre>
-        <Button onClick={handleSaveUser}>
-          Save User
-        </Button>
+        <pre className="text-left">{JSON.stringify(sampleUser, null, 2)}</pre>
+        <Button onClick={handleSaveUser}>Save User</Button>
       </div>
 
-      <p>Manage user accounts and profiles</p>
+      <p>Manage userItem accounts and profiles</p>
     </div>
   );
 }
