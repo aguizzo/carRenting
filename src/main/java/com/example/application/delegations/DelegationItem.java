@@ -4,7 +4,7 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttri
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 
 @DynamoDbBean
-public class Delegation extends DelegationTableItem {
+public class DelegationItem extends DelegationTableItem {
     private String name;
     private String address;
     private String city;

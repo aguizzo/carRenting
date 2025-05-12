@@ -4,7 +4,7 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttri
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 
 @DynamoDbBean
-public class Car extends DelegationTableItem {
+public class CarItem extends DelegationTableItem {
     private String make;
     private String model;
     private int year;

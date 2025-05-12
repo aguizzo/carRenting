@@ -1,22 +1,22 @@
 package com.example.application.users;
 
 
-import com.example.application.delegations.Car;
-import com.example.application.delegations.Delegation;
+import com.example.application.delegations.CarItem;
+import com.example.application.delegations.DelegationItem;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttribute;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 
 @DynamoDbBean
-public class Booking extends UserTableItem {
+public class BookingItem extends UserTableItem {
     private String status;
     private String startDate;
     private String endDate;
     private double totalToPayment;
     private String statusPayment;
     private String statusBooking;
-    private Car car;
-    private Delegation pickUpDelegation;
-    private Delegation deliveryDelegation;
+    private CarItem car;
+    private DelegationItem pickUpDelegation;
+    private DelegationItem deliveryDelegation;
 
     @DynamoDbAttribute("status")
     public String getStatus() {
@@ -73,29 +73,29 @@ public class Booking extends UserTableItem {
     }
 
     @DynamoDbAttribute("car")
-    public Car getCar() {
+    public CarItem getCar() {
         return car;
     }
 
-    public void setCar(Car car) {
-        this.car = car;
+    public void setCar(CarItem carItem) {
+        this.car = carItem;
     }
 
     @DynamoDbAttribute("pickUpDelegation")
-    public Delegation getPickUpDelegation() {
+    public DelegationItem getPickUpDelegation() {
         return pickUpDelegation;
     }
 
-    public void setPickUpDelegation(Delegation pickUpDelegation) {
+    public void setPickUpDelegation(DelegationItem pickUpDelegation) {
         this.pickUpDelegation = pickUpDelegation;
     }
 
     @DynamoDbAttribute("deliveryDelegation")
-    public Delegation getDeliveryDelegation() {
+    public DelegationItem getDeliveryDelegation() {
         return deliveryDelegation;
     }
 
-    public void setDeliverDelegation(Delegation deliveryDelegation) {
+    public void setDeliverDelegation(DelegationItem deliveryDelegation) {
         this.deliveryDelegation = deliveryDelegation;
     }
 }

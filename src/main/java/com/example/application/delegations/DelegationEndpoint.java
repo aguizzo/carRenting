@@ -18,32 +18,32 @@ public class DelegationEndpoint {
     }
 
     // Save Delegation
-    public void saveDelegation(Delegation delegation) {
-        delegationRepository.save(delegation);
+    public void saveDelegation(DelegationItem delegationItem) {
+        delegationRepository.save(delegationItem);
     }
 
     // Save Car
-    public void saveCar(Car car) {
+    public void saveCar(CarItem car) {
         delegationRepository.save(car);
     }
 
     // Get Delegation by keys
-    public Delegation getDelegation(String delegationId, String operation) {
-        return delegationRepository.get(delegationId, operation, Delegation.class);
+    public DelegationItem getDelegation(String delegationId, String operation) {
+        return delegationRepository.get(delegationId, operation, DelegationItem.class);
     }
 
     // Get Car by keys
-    public Car getCar(String id, String operation) {
-        return delegationRepository.get(id, operation, Car.class);
+    public CarItem getCar(String id, String operation) {
+        return delegationRepository.get(id, operation, CarItem.class);
     }
 
     // List Delegations by delegationId
-    public List<Delegation> listDelegationsById(String delegationId) {
-        return delegationRepository.listByPartitionKey(delegationId, Delegation.class);
+    public List<DelegationItem> listDelegationsById(String delegationId) {
+        return delegationRepository.listByPartitionKey(delegationId, DelegationItem.class);
     }
 
     // List Cars by id (partition key)
-    public List<Car> listCarsById(String id) {
-        return delegationRepository.listByPartitionKey(id, Car.class);
+    public List<CarItem> listCarsById(String id) {
+        return delegationRepository.listByPartitionKey(id, CarItem.class);
     }
 }
