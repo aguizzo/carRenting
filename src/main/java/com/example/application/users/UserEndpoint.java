@@ -19,4 +19,9 @@ public class UserEndpoint {
         System.out.println("UserEndpoint.saveUser: " + user);
         userRepository.save(user);
     }
+
+    public void saveBooking(Booking booking) {
+        System.out.println("UserEndpoint.saveBooking: " + booking);
+        userRepository.save(booking);
+    }
 }
